@@ -1,4 +1,4 @@
-# Middleware
+# Decorator
     node app.js
 
 Sortida esperada:
