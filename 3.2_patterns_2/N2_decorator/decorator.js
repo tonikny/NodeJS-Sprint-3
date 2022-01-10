@@ -1,15 +1,15 @@
 const canvis = require('./currency_conversions');
 
-  const decorator_preu = function preu_EUR(art) {
-    if (art.divisa !== 'EUR') {
+  const decorator_preu = function () {
+    if (this.divisa !== 'EUR') {
       for (const divisa in canvis) {
-        if (divisa.substring(0, 3) === art.divisa) {
-          return art.preu * canvis[divisa];
+        if (divisa.substring(0, 3) === this.divisa) {
+          return this.preu * canvis[divisa];
         }
       }
-      console.log('No existeix canvi per a la divisa', art.divisa);
+      console.log('No existeix canvi per a la divisa', this.divisa);
     } else {
-      return art.preu;
+      return this.preu;
     }
   }
 

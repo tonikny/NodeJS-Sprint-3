@@ -1,4 +1,7 @@
+const decorator_preu = require('./decorator');
 const Article = require('./articles');
+
+Article.prototype.preuEUR =  decorator_preu;
 
 const articles = [
   new Article('Martell', 8.50, 'USD'),
@@ -8,7 +11,7 @@ const articles = [
 
 articles.forEach(art => {
   console.log('Nom:', art.nom, 'Preu:', art.preu, art.divisa);
-  if (art.preuEUR) console.log('Nom:', art.nom, 'Preu:', art.preuEUR, 'EUR');
+  if (art.preuEUR()) console.log('Nom:', art.nom, 'Preu:', art.preuEUR(), 'EUR');
   console.log();
 });
 
