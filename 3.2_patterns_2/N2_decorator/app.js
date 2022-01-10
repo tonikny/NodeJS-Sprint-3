@@ -1,9 +1,4 @@
-const decorator_preu = require('./decorator');
-
-let Article = require('./articles');
-
-// apliquem el decorator a la classe
-Article.preuEUR = decorator_preu
+const Article = require('./articles');
 
 const articles = [
   new Article('Martell', 8.50, 'USD'),

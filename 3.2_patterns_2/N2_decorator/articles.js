@@ -1,3 +1,4 @@
+const decorator_preu = require('./decorator');
 
 class Article {
 
@@ -5,6 +6,7 @@ class Article {
     this.nom = nom;
     this.preu = preu;
     this.divisa = divisa;
+    this.preuEUR = decorator_preu(this);
   }
 
 }
